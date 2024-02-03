@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Nav from './Navigation/Nav';
 
 function App() {
+
+  const [query, setQuery] = useState("");
+
+  const handleInputChange = (event) => {
+    setQuery(event.target.value);
+  };
+
   return (
-    <div>App</div>
+    <>
+      <Nav query={query} handleInputChange={handleInputChange} />
+    </>
   )
 }
 
